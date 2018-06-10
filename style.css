@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    margin: 0;
+    background: #58a9df;
+    height: 100%;
+    width: 100%;
+    flex-grow: 1;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    border: 1px solid black;
+    width: 50%;
+}
+
+input {
+    width: 25vw;
+    margin-bottom: 2vw;
+    border: none;
+    border-radius: 2vw;
+    height: 6vh;
+}
+
+input:focus{
+    outline: none;
+    transform: scaleX(1.1);
+    transition: ease 0.5s;
+}
+
+input:blur {
+    transform: scaleX(0.9);
+}
+
+input[type=text], input[type=email], input[type=password]{
+    padding-left: 1vw;
+}
+
+
+.center {
+    justify-content: center;
+    align-items: center;
+}
+
+input[type=submit]{
+    background: #13537e;
+    color: white;
+}
+
+table {
+    background: white;
+    width: 40vw;
+    height: 40vh;
+    border-radius: 1vw;
+    padding: 1vw;
+    border-spacing: 0;
+}
+
+tr:first-child{
+    border-top-left-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+
+tbody:nth-child(odd){
+    background: red;
+}
+
+td,th{
+    border: 1px solid #494949;
+}
