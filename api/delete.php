@@ -2,7 +2,7 @@
 
 $id = $_GET['id'];
 
-$dbh = include("pdo.php");
+$dbh = include("pdoMySQL.php");
 
 $sth = $dbh->prepare("UPDATE usuario SET nome_usuario = ?, senha_usuario = ?, email_usuario = ? WHERE id_usuario = ?");
 

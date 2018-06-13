@@ -9,4 +9,4 @@ $nome = $_POST["nome"];
 $senha = $_POST["senha"];
 $email = $_POST["email"];
 
-$dbh = include("pdo.php");
+$dbh = include("pdoMySQL.php");

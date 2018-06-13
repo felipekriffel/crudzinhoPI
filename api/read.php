@@ -1,6 +1,6 @@
 <?php
 
-$banco = include '../pdo.php';
+$banco = include 'pdoMySQL.php';
 
 function sendResults($banco){
     $sth = $banco->prepare("

@@ -1,19 +1,19 @@
 <?php
+/* 
+$array = ["opa"];
+echo json_encode($array);
+ */
 
-if(!isset($_POST["nome"]) || !isset($_POST["senha"]) || !isset($_POST["email"])){
-    die("Reveja os dados inseridos");
-}
+$request = json_decode(file_get_contents('php://input'));
 
-$nome = $_POST["nome"];
-$senha = $_POST["senha"];
-$email = $_POST["email"];
 
-$dbh = include("pdo.php");
+$nome = $request->login;
+$senha = $request->senha;
 
-$sth = $dbh->prepare("INSERT INTO usuario (nome_usuario, senha_usuario, email_usuario) VALUES ('?' , '?' , '?' ')");
+$dbh = include("pdoMySQL.php");
 
-$sth->execute([$nome, $senha, $email]);
+$sth = $dbh->prepare("INSERT INTO usuario (login_usuario, senha_usuario) VALUES (? , ?)");
 
-if($sth->rowCount() > 0){
-    die("O usuário foi inserido");
-}
+$sth->execute(["$nome", "$senha"]);
+
+echo "tudo certo fiote";
